@@ -40,8 +40,7 @@ dataMelted <- mutate(dataMelted, DateTime =as.POSIXct(DateTime, format = "%Y-%m-
 
 plot3 <- ggplot(data=dataMelted, aes(x=DateTime,y=value, group=variable, color=variable)) + geom_line() + scale_x_datetime(breaks = date_breaks("1 day"),labels=date_format("%a")) + 
   theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor=element_blank()) + xlab("") + ylab("Energy Sub Meetering") + 
-  theme(legend.position = c(0, 1), 
-       legend.justification = c(0, 1)) 
+  theme(legend.position = c(0.5, 1), legend.justification = c(0, 1), legend.key=element_blank(),legend.title=element_blank()) 
 ggsave('plot3.png')
 
 #Plot 4
